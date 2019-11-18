@@ -23,4 +23,6 @@ Route::resource('/orders', 'OrdersController');
 
 Route::get('/orders/destroy/{id}', 'OrdersController@destroy');
 
+Route::get('/search', 'OrdersController@search');
+
 
