@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/orders', 'OrdersController');
 
+Route::get('/orders/destroy/{id}', 'OrdersController@destroy');
+
+
