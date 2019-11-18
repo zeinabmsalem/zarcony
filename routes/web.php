@@ -25,4 +25,7 @@ Route::get('/orders/destroy/{id}', 'OrdersController@destroy');
 
 Route::get('/search', 'OrdersController@search');
 
+Route::get('/search_order_byID_orbyName', 'OrdersController@search_order_byID_orbyName');
+
+
 
