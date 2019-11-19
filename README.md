@@ -1,78 +1,71 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## About Pizza Order Application Using Laravel
 
-## About Laravel
+1- It's an application where you add pizza where all crud functionality is applied where you can:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- List all pizza available in the system.
+- Create new pizaa.
+- Update each pizza item.
+- Delete pizza item.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2- It's an application where you add pizza order where all crud functionality is applied where you can:
 
-## Learning Laravel
+- List all pizza orders available in the system.
+- Create new pizaa order where you can specify the desired flavor of a pizza, the number of pizzas and it's size and adding Customer information as name and Address as they are must.
+- Update each pizza order delivery status.
+- Delete pizza order only if it's delieverd.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Application Specification
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-Use PHP 7.2+.
+-Laravel version 6
+-Laravel Authentication is applied
+-Has Docker Container
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
 
-## Contributing
+## Clone the application from GitHub instructions working with Linux host:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1- Open Terminal.
 
-## Code of Conduct
+2- Create new directory: sudo mkdir directory_name 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3- Change the current working directory to the location of the new directory you just created: cd directory_name
 
-## Security Vulnerabilities
+4- On GitHub, navigate to the main page of the repository
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5- Under the repository name, click Clone or download. 
 
-## License
+6- To clone the repository using HTTPS, under "Clone with HTTPS", click Use HTTPS. To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click Use SSH.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7- Type git clone and then paste the URL you copied in Step 5 : 
+
+	-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY>.
+
+8- A new directory inside directory_name will be created cd to this one.
+
+9- Open Application go to .env file change:
+
+	-DB_DATABASE=
+	-DB_USERNAME=
+	-DB_PASSWORD=
+
+	to the values equal to your MySQl Connection so you can connect to your Database.
+
+10- Then migrate the database migration files in this application to be loaded to your mysql database:
+
+	-sudo php artisan migrate
+
+11- Then run application on apache server:
+
+	-sudo php artisan serve
+
+	-get the link created run it on browser to serve your application
+
+12- To run application on docker container:
+
+	-sudo docker-compose up
+
+
