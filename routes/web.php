@@ -29,6 +29,9 @@ Route::get('/search_order_byID_orbyName', 'OrdersController@search_order_byID_or
 
 Route::resource('/newpizzas', 'NewpizzasController');
 
+Route::get('/newpizzas/destroy/{id}', 'NewpizzasController@destroy');
+
+
 
 
 
