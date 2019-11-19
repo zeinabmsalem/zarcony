@@ -27,5 +27,8 @@ Route::get('/search', 'OrdersController@search');
 
 Route::get('/search_order_byID_orbyName', 'OrdersController@search_order_byID_orbyName');
 
+Route::resource('/newpizzas', 'NewpizzasController');
+
+
 
 
