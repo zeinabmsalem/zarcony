@@ -1,0 +1,38 @@
+
+version: "3"
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: container-build/web/Dockerfile
+    environment:
+    - MYSQL_DATABASE=pizza
+    - MYSQL_USER=admin
+    - MYSQL_PASSWORD='123'
+    - MYSQL_HOST=localhost
+    ports:
+    - "8080:80"
+    volumes:
+    - .:/var/www
+    depends_on:
+    - mysql
+
+
+  mysql:
+
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+    - "6603:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD='123'
+    - MYSQL_USER=admin  
+    - MYSQL_PASSWORD='123'
+    - MYSQL_DATABASE=pizza
+    volumes:
+    - "mysql_data:/var/lib/mysql"
+    - ./data/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+volumes:
+  mysql_data: { driver: local }
