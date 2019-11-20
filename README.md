@@ -64,8 +64,50 @@
 
 	-get the link created run it on browser to serve your application
 
-12- To run application on docker container:
 
-	-sudo docker-compose up
+## To Run Application on Docker Container:
+
+1- you must change ownership on storage and bootstrap folders:
+
+	- go to terminal
+	- cd to your application directory and type:
+
+	- sudo chown -R www-data:www-data bootstrap/  storage/
+
+	- now type: ls -l
+	    you will find ownership changed to user and group named <www-data>
+
+	-then type on terminal:  sudo docker-compose up
+
+	-go to browser and type:  localhost:8080 as it's the port specified 
+	 for the container to run on in the  docker-compose.yml file.
+
+
+
+## To Run Scheduled Task Automatically:
+
+1- You must specifiy a cron job on your server
+
+  -open terminal
+
+  -cd application directory
+
+  -type: 
+      sudo env EDITOR=gedit crontab -e
+
+  -this will open the crontab file
+
+  -add this line at the bottom of the file:
+
+     * *    * * *       cd /path/to/application/ && php artisan schedule:run >> /dev/null 2>&1
+
+  -you will have to replace /path/to/application/ with your own path 
+    of the application ex:  /var/www/html/pizzaorder/
+
+  -save and close file.
+
+
+
+
 
 
