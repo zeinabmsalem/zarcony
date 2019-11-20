@@ -25,7 +25,6 @@ class CreateOrdersTable extends Migration
             $table->string('customer_phone')->nullable();
             $table->integer('user_id');
 
-            $table->time('delivery_duration')->default('00:15:00');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
