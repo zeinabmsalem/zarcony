@@ -1,21 +1,25 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Controllers;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
 use App\Newpizza;
 use App\Order;
 
+
 class OrdersControllerTest extends TestCase
 {
+    
     /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
+    *@test
+    */
+
     public function testIndex()
     {
 
@@ -32,16 +36,19 @@ class OrdersControllerTest extends TestCase
     }
 
 
-    public function testCreate(){
+    // public function testCreate()
+    // {
 
-        $response = $this->call('GET', 'orders/create');
+    //     $response = $this->call('GET', '/orders/create');
 
-        $response->assertStatus(200);
+    //     $response->assertStatus(200);
 
-        $response->assertViewIs('orders.create');
+    //     $response->assertViewHas('pizzas', 'orders');
 
-      //   dd($response);
-    }
+    //     $response->assertViewIs('orders.create');
+
+    //   //   dd($response);
+    // }
 
 
     public function testStore(){
@@ -116,7 +123,7 @@ class OrdersControllerTest extends TestCase
 
         $response->assertViewIs('orders.index');
 
-        dd($response);
+       // dd($response);
 
     }
 
