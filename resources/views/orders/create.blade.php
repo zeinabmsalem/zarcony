@@ -90,8 +90,6 @@ $('#save').click(function (e){
 
       var size = $('#size').val();
 
-      alert(flavor);
-
 if({{ count($orders) }} > 0){
 
     $("input[name='old_flavor']").each(function (){
