@@ -107,6 +107,15 @@
   -save and close file.
 
 
+## The Way for delivery status checking for an order:
+
+  -I made the delivery time equal 5 minutes from the time of order creation which can be changed to any duration.
+
+  -Once order created after five minutes it's status will be converted from Not delivered to delivered.
+
+  
+
+
 
 
 
