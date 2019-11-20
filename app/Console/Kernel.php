@@ -5,6 +5,10 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use DB;
+use Order;
+use Carbon\Carbon;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -26,6 +30,12 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+        $schedule->call(function () {
+
+            DB::table('orders')->where('created_at', '<', Carbon::now()->subMinutes(5)->toDateTimeString())
+                                ->update(['delivery_status'=>'Done']);
+            })->everyMinute();
     }
 
     /**
