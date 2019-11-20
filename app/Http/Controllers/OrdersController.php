@@ -95,33 +95,9 @@ class OrdersController extends Controller
 
         $order->user_id = auth()->user()->id;
 
-        $order->save();
-
-        $id = $order->id;
-
-        $order = Order::findOrFail($id);
-
-        $creation_at = $order->created_at;
-
-        $delivery_time = date('H:i:s', strtotime($creation_at.'+5 minutes'));
-
-        $end_time = date('H:i:s');
-       
-        if($end_time == $delivery_time){
-
-           $order->delivery_status = "Done";
-
-            $order->update();
-
-        }
-
-
-        // echo ($delivery_time); 
-           
+        $order->save();           
 
         return redirect('/orders');
-
-       
 
     }
 
@@ -131,13 +107,6 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    // public function filter_by_name($customer_name)
-    // {
-    //     $order = Order::findOrFail($customer_name);
-
-    //     return view('orders.filter_by_name', compact('order'));
-    // }
 
 
     public function show($id)
@@ -189,8 +158,6 @@ class OrdersController extends Controller
     public function destroy($id)
     {
         $order = Order::find($id);
-
-        // return view('orders.destroy', compact('order'));
 
         if ($order->delivery_status=="Not Yet!") {
 
